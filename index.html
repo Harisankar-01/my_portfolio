@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harisankar T | Cybersecurity Portfolio</title>
+  <meta name="description" content="Cybersecurity portfolio of Harisankar T - Aspiring SOC Analyst, Ethical Hacker, and Security Operations enthusiast showcasing projects, certifications, and labs.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Lightbox Neon Modal for Click-to-Enlarge (Profile & Certificates) -->
+  <div id="neon-modal" class="neon-modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-backdrop" id="modal-backdrop"></div>
+    <div class="modal-container">
+      <button class="modal-close-btn" id="modal-close-btn" aria-label="Close modal">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <div class="modal-content">
+        <div class="modal-image-wrapper">
+          <img id="modal-img" src="" alt="Enlarged preview">
+          <div class="modal-glow-overlay"></div>
+        </div>
+        <div class="modal-details">
+          <div class="modal-header-row">
+            <span class="modal-badge" id="modal-badge">Verified</span>
+            <span class="modal-date" id="modal-date">2026</span>
+          </div>
+          <h3 id="modal-title" class="modal-title">Certificate Title</h3>
+          <p id="modal-desc" class="modal-desc">Detailed information regarding this credential or image preview.</p>
+          <div class="modal-actions">
+            <a href="https://example.com/verify-credential" target="_blank" rel="noopener noreferrer" id="modal-link" class="btn btn-primary btn-sm">
+              <span>View Credential</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="app-layout">
+    <!-- Desktop Left Navigation Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-brand">
+        <div class="brand-avatar">
+          <div class="brand-circle">H</div>
+        </div>
+        <div class="brand-info">
+          <h2 class="brand-name">Harisankar T</h2>
+          <span class="brand-tagline">Cybersecurity Portfolio</span>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="#home" class="nav-link active" data-section="home">
+              <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+              </svg>
+              <span>Home</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#about" class="nav-link" data-section="about">
+              <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+              <span>About</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#certifications" class="nav-link" data-section="certifications">
+              <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="8" r="6"></circle>
+                <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path>
+              </svg>
+              <span>Certifications</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#projects" class="nav-link" data-section="projects">
+              <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="7" height="9" x="3" y="3" rx="1"></rect>
+                <rect width="7" height="5" x="14" y="3" rx="1"></rect>
+                <rect width="7" height="9" x="14" y="12" rx="1"></rect>
+                <rect width="7" height="5" x="3" y="16" rx="1"></rect>
+              </svg>
+              <span>Projects</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#security-labs" class="nav-link" data-section="security-labs">
+              <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+              <span>Security Labs</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#write-ups" class="nav-link" data-section="write-ups">
+              <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+              </svg>
+              <span>Write-ups</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#skills" class="nav-link" data-section="skills">
+              <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+              </svg>
+              <span>Tools & Skills</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#contact" class="nav-link" data-section="contact">
+              <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+              </svg>
+              <span>Contact</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="social-links">
+          <a href="https://github.com/example" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="GitHub Profile">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
+          </a>
+          <a href="https://linkedin.com/in/example" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn Profile">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+            </svg>
+          </a>
+          <a href="mailto:harisankar.cybersec@example.com" class="social-btn" aria-label="Email Me">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+            </svg>
+          </a>
+        </div>
+        <p class="sidebar-quote">
+          <span class="quote-keywords">"Learn · Build · Grow"</span>
+          <span class="quote-sub">— Towards a safer digital world</span>
+        </p>
+      </div>
+    </aside>
+
+    <!-- Mobile Top Header Bar -->
+    <header class="mobile-header">
+      <div class="mobile-brand">
+        <div class="brand-avatar-sm">
+          <div class="brand-circle-sm">H</div>
+        </div>
+        <div class="brand-info-sm">
+          <span class="brand-name-sm">Harisankar T</span>
+          <span class="brand-tagline-sm">Cybersecurity Portfolio</span>
+        </div>
+      </div>
+      <div class="mobile-header-actions">
+        <button class="theme-toggle-btn-sm" id="theme-toggle-sm" aria-label="Toggle Dark/Light Mode">
+          <svg class="sun-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="moon-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+        <button class="menu-toggle-btn" id="menu-toggle-btn" aria-label="Toggle navigation menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Content Canvas -->
+    <main class="main-content">
+      <!-- Top Utility Bar (Desktop Theme Switcher) -->
+      <div class="desktop-top-bar">
+        <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle Dark/Light Mode">
+          <svg class="sun-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="moon-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- SECTION 1: HERO -->
+      <section id="home" class="hero-section">
+        <div class="hero-container">
+          <div class="hero-text-col">
+            <div class="greeting-pill">
+              <span class="greeting-icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+              </span>
+              <span>Hi, I'm</span>
+            </div>
+
+            <h1 class="hero-title">
+              Harisankar <span class="neon-accent">T</span>
+            </h1>
+
+            <h2 class="hero-subtitle">Aspiring Cybersecurity Professional</h2>
+
+            <p class="hero-description">
+              I'm a BCom graduate with a passion for cybersecurity. Currently building my skills in security operations, vulnerability assessment and ethical hacking. I'm on a journey to become a SOC Analyst and create a safer digital world.
+            </p>
+
+            <div class="hero-cta-group">
+              <a href="#projects" class="btn btn-primary">
+                <span>View My Projects</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+              <a href="https://example.com/sample-resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                <span>Download Resume</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="hero-visual-col">
+            <div class="hero-card-banner">
+              <div class="hero-banner-image-wrap">
+                <!-- Sample Hero Cybersecurity Artwork -->
+                <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80" alt="Cybersecurity Analyst Monitoring Terminal" class="hero-banner-img">
+                <div class="hero-banner-overlay"></div>
+                <div class="banner-floating-badge">
+                  <span class="badge-accent-line"></span>
+                  <div class="badge-text">
+                    <span class="badge-line-1">Better</span>
+                    <span class="badge-line-2">Security</span>
+                    <span class="badge-line-3">Tomorrow</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 2: ABOUT ME -->
+      <section id="about" class="section-container">
+        <div class="section-header">
+          <div class="section-title-wrap">
+            <span class="section-indicator">|</span>
+            <h2 class="section-title">About Me</h2>
+            <span class="section-dash">—</span>
+          </div>
+        </div>
+
+        <div class="about-grid">
+          <!-- Card 1: Profile Image & Location / Quick Info -->
+          <div class="about-card profile-card">
+            <div class="profile-img-container" id="profile-pic-card" data-title="Harisankar T - Profile Picture" data-badge="About Me" data-desc="Harisankar T | Aspiring Cybersecurity Professional & SOC Analyst based in Palakkad, Kerala." data-date="2026">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80" alt="Harisankar T Profile" class="profile-img" id="profile-img">
+              <div class="profile-img-hover-overlay">
+                <span class="zoom-indicator">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    <line x1="11" y1="8" x2="11" y2="14"></line>
+                    <line x1="8" y1="11" x2="14" y2="11"></line>
+                  </svg>
+                  Click to Zoom
+                </span>
+              </div>
+            </div>
+            <div class="profile-meta-list">
+              <div class="meta-item">
+                <span class="meta-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                </span>
+                <span class="meta-text">Palakkad, Kerala</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                    <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                  </svg>
+                </span>
+                <span class="meta-text">BCom Graduate (2026)</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  </svg>
+                </span>
+                <span class="meta-text">Cybersecurity Enthusiast</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Narrative Bio -->
+          <div class="about-card bio-card">
+            <div class="bio-content">
+              <p>
+                I'm <strong>Harisankar T</strong>, a BCom graduate from Palakkad, Kerala. My journey into cybersecurity started during my 10th vacation with a simple phone and YouTube. What began as curiosity grew into a passion for ethical hacking and security.
+              </p>
+              <p>
+                I have completed the <strong class="highlight-text">Google Cybersecurity Professional Certificate</strong>, <strong class="highlight-text">Hackviser CORE</strong> and gained hands-on experience through <strong class="highlight-text">TryHackMe</strong> and <strong class="highlight-text">PortSwigger labs</strong>. I'm currently preparing for the <strong class="highlight-text">CEH certification</strong> while building practical skills for SOC L1 roles.
+              </p>
+              <div class="bio-extended-text" id="bio-extended">
+                <p>
+                  Continuously honing practical skills across log forensics with Splunk & Microsoft Sentinel, network packet inspection with Wireshark, active directory simulations, and web exploitation scenarios.
+                </p>
+              </div>
+              <button class="read-more-btn" id="read-more-btn">
+                <span>Read More</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 3: Goals Checklist -->
+          <div class="about-card goals-card">
+            <h3 class="goals-title">My Goals <span class="dash">—</span></h3>
+            <ul class="goals-list">
+              <li class="goal-item">
+                <div class="goal-icon-badge">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  </svg>
+                </div>
+                <span class="goal-label">Complete CEH Certification</span>
+              </li>
+              <li class="goal-item">
+                <div class="goal-icon-badge">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="20" x2="18" y2="10"></line>
+                    <line x1="12" y1="20" x2="12" y2="4"></line>
+                    <line x1="6" y1="20" x2="6" y2="14"></line>
+                  </svg>
+                </div>
+                <span class="goal-label">Gain SOC L1 Experience</span>
+              </li>
+              <li class="goal-item">
+                <div class="goal-icon-badge">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect width="20" height="14" x="2" y="5" rx="2"></rect>
+                    <line x1="2" y1="10" x2="22" y2="10"></line>
+                  </svg>
+                </div>
+                <span class="goal-label">Build a Strong Portfolio</span>
+              </li>
+              <li class="goal-item">
+                <div class="goal-icon-badge">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect width="20" height="14" x="2" y="7" rx="2" ry="2"></rect>
+                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                  </svg>
+                </div>
+                <span class="goal-label">Get a Cybersecurity Job / Internship</span>
+              </li>
+              <li class="goal-item">
+                <div class="goal-icon-badge">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <circle cx="12" cy="12" r="6"></circle>
+                    <circle cx="12" cy="12" r="2"></circle>
+                  </svg>
+                </div>
+                <span class="goal-label">Grow into a Specialist (Blue / Red Team)</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 3: CERTIFICATIONS -->
+      <section id="certifications" class="section-container">
+        <div class="section-header space-between">
+          <div class="section-title-wrap">
+            <span class="section-indicator">|</span>
+            <h2 class="section-title">Certifications</h2>
+            <span class="section-dash">—</span>
+          </div>
+          <a href="https://example.com/all-certificates" target="_blank" rel="noopener noreferrer" class="section-link">
+            <span>View All</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+
+        <div class="certifications-grid">
+          <!-- Cert 1: Google Cybersecurity -->
+          <div class="cert-card" 
+               data-title="Google Cybersecurity Professional Certificate" 
+               data-badge="Completed" 
+               data-date="Sep 20, 2025" 
+               data-desc="Comprehensive training in network security, Linux command line, SQL, Python security automation, incident detection and SIEM fundamentals."
+               data-img="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1000&q=80"
+               data-link="https://coursera.org/verify/example-google-cert">
+            <div class="cert-card-header">
+              <div class="cert-logo-box google-bg">
+                <span class="cert-logo-text">G</span>
+              </div>
+              <span class="cert-status-badge badge-completed">Completed</span>
+            </div>
+            <div class="cert-card-body">
+              <h3 class="cert-card-title">Google Cybersecurity Professional Certificate</h3>
+              <p class="cert-card-date">Sep 20, 2025</p>
+            </div>
+            <div class="cert-card-footer">
+              <button class="cert-action-btn" aria-label="View Google Cybersecurity Certificate">
+                <span>View Certificate</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Cert 2: Hackviser CORE -->
+          <div class="cert-card" 
+               data-title="Hackviser Certified Cybersecurity Foundations (CORE)" 
+               data-badge="Completed" 
+               data-date="2026" 
+               data-desc="Practical foundations in offensive security, vulnerability assessment, threat mapping, and defensive posture evaluation."
+               data-img="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1000&q=80"
+               data-link="https://hackviser.com/verify/example-core-cert">
+            <div class="cert-card-header">
+              <div class="cert-logo-box hackviser-bg">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+              </div>
+              <span class="cert-status-badge badge-completed">Completed</span>
+            </div>
+            <div class="cert-card-body">
+              <h3 class="cert-card-title">Hackviser Certified Cybersecurity Foundations (CORE)</h3>
+              <p class="cert-card-date">2026</p>
+            </div>
+            <div class="cert-card-footer">
+              <button class="cert-action-btn" aria-label="View Hackviser Certificate">
+                <span>View Certificate</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Cert 3: TryHackMe -->
+          <div class="cert-card" 
+               data-title="TryHackMe Hands-on Security Labs" 
+               data-badge="Practical Labs" 
+               data-date="Golden Club" 
+               data-desc="Hands-on interactive labs covering network fundamentals, Windows/Linux privilege escalation, web vulnerabilities and blue team forensics."
+               data-img="https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&w=1000&q=80"
+               data-link="https://tryhackme.com/p/example-harisankar">
+            <div class="cert-card-header">
+              <div class="cert-logo-box thm-bg">
+                <span class="thm-text">THM</span>
+              </div>
+              <span class="cert-status-badge badge-practical">Practical Labs</span>
+            </div>
+            <div class="cert-card-body">
+              <h3 class="cert-card-title">TryHackMe</h3>
+              <ul class="cert-bullet-list">
+                <li>• Hands-on Labs</li>
+                <li>• Level 5 / Golden Club</li>
+              </ul>
+            </div>
+            <div class="cert-card-footer">
+              <button class="cert-action-btn" aria-label="View TryHackMe Profile">
+                <span>View Profile</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Cert 4: PortSwigger -->
+          <div class="cert-card" 
+               data-title="PortSwigger Web Security Academy" 
+               data-badge="Practical Labs" 
+               data-date="2026" 
+               data-desc="Dedicated web application exploitation labs covering SQL Injection, XSS, CSRF, SSRF, IDOR, and authentication bypasses."
+               data-img="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1000&q=80"
+               data-link="https://portswigger.net/web-security/user/example">
+            <div class="cert-card-header">
+              <div class="cert-logo-box portswigger-bg">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                </svg>
+              </div>
+              <span class="cert-status-badge badge-practical">Practical Labs</span>
+            </div>
+            <div class="cert-card-body">
+              <h3 class="cert-card-title">PortSwigger Web Security Academy</h3>
+              <ul class="cert-bullet-list">
+                <li>• Web Security Labs</li>
+                <li>• Vulnerability Practice</li>
+              </ul>
+            </div>
+            <div class="cert-card-footer">
+              <button class="cert-action-btn" aria-label="View PortSwigger Profile">
+                <span>View Profile</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Cert 5: CEH -->
+          <div class="cert-card" 
+               data-title="EC-Council Certified Ethical Hacker (CEH)" 
+               data-badge="In Progress" 
+               data-date="Target 2026" 
+               data-desc="Comprehensive theoretical and practical exam preparation covering network scanning, malware analysis, social engineering, cryptography, and cloud security."
+               data-img="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1000&q=80"
+               data-link="https://example.com/ceh-roadmap">
+            <div class="cert-card-header">
+              <div class="cert-logo-box ceh-bg">
+                <span class="ceh-text">CEH</span>
+              </div>
+              <span class="cert-status-badge badge-progress">In Progress</span>
+            </div>
+            <div class="cert-card-body">
+              <h3 class="cert-card-title">EC-Council Certified Ethical Hacker (CEH)</h3>
+              <p class="cert-card-status">Preparation in Progress</p>
+            </div>
+            <div class="cert-card-footer">
+              <button class="cert-action-btn" aria-label="View CEH Details">
+                <span>View Details</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 4: FEATURED PROJECTS -->
+      <section id="projects" class="section-container">
+        <div class="section-header space-between">
+          <div class="section-title-wrap">
+            <span class="section-indicator">|</span>
+            <h2 class="section-title">Featured Projects</h2>
+            <span class="section-dash">—</span>
+          </div>
+          <a href="https://github.com/example?tab=repositories" target="_blank" rel="noopener noreferrer" class="section-link">
+            <span>View All</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 1: SOC Home Lab -->
+          <div class="project-card">
+            <div class="project-preview-box">
+              <div class="diagram-preview">
+                <div class="diagram-node">
+                  <span class="node-icon">💻</span>
+                  <span class="node-label">Kali</span>
+                </div>
+                <div class="diagram-arrow">➔</div>
+                <div class="diagram-node">
+                  <span class="node-icon">🪟</span>
+                  <span class="node-label">Windows</span>
+                </div>
+                <div class="diagram-arrow">➔</div>
+                <div class="diagram-node">
+                  <span class="node-icon">📊</span>
+                  <span class="node-label">SIEM</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-card-content">
+              <h3 class="project-title">SOC Home Lab</h3>
+              <div class="tag-row">
+                <span class="tech-tag">SIEM</span>
+                <span class="tech-tag">Log Analysis</span>
+                <span class="tech-tag">MITRE ATT&CK</span>
+              </div>
+              <p class="project-desc">
+                Built a small lab to simulate and investigate security incidents using Windows, Linux and a SIEM.
+              </p>
+              <a href="https://example.com/project-soc-lab" target="_blank" rel="noopener noreferrer" class="project-link">
+                <span>View Project</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Project 2: Web Security Assessment -->
+          <div class="project-card">
+            <div class="project-preview-box burp-preview">
+              <div class="burp-banner">
+                <span class="burp-logo-badge">OWASP Juice Shop</span>
+                <span class="burp-suite-badge">Burp Suite</span>
+              </div>
+            </div>
+            <div class="project-card-content">
+              <h3 class="project-title">Web Security Assessment</h3>
+              <div class="tag-row">
+                <span class="tech-tag">OWASP</span>
+                <span class="tech-tag">Burp Suite</span>
+              </div>
+              <p class="project-desc">
+                Tested OWASP Juice Shop for common vulnerabilities and documented findings with remediation steps.
+              </p>
+              <a href="https://example.com/project-web-assessment" target="_blank" rel="noopener noreferrer" class="project-link">
+                <span>View Project</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Project 3: Vulnerability Assessment -->
+          <div class="project-card">
+            <div class="project-preview-box nessus-preview">
+              <div class="terminal-preview-code">
+                <span class="term-line">$ nmap -sV -sC -p- 192.168.1.55</span>
+                <span class="term-line-cyan">Target: Metasploitable 2</span>
+              </div>
+              <div class="nessus-floating-badge">
+                <span class="nessus-dot"></span> Nessus
+              </div>
+            </div>
+            <div class="project-card-content">
+              <h3 class="project-title">Vulnerability Assessment</h3>
+              <div class="tag-row">
+                <span class="tech-tag">Nmap</span>
+                <span class="tech-tag">Nessus</span>
+              </div>
+              <p class="project-desc">
+                Performed network scanning and vulnerability assessment on a vulnerable lab environment.
+              </p>
+              <a href="https://example.com/project-vulnerability-assessment" target="_blank" rel="noopener noreferrer" class="project-link">
+                <span>View Project</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Project 4: Security Log Analyzer -->
+          <div class="project-card">
+            <div class="project-preview-box python-preview">
+              <div class="terminal-preview-code">
+                <span class="term-line-green">&gt;&gt;&gt; analyzer.parse_auth_log()</span>
+                <span class="term-line">[ALERT] Failed SSH brute-force (IP: 10.0.0.14)</span>
+              </div>
+              <div class="python-floating-badge">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M11.914 0C5.825 0 6.2 2.656 6.2 2.656l.006 2.753h5.815v.826H3.88s-3.88.44-3.88 5.794c0 5.353 3.39 5.253 3.39 5.253h2.025v-2.842s-.11-3.39 3.33-3.39h5.738V7.93s.385-4.275-2.569-4.275zm-3.24 1.706a1.01 1.01 0 1 1 0 2.02 1.01 1.01 0 0 1 0-2.02zM12.086 24c6.089 0 5.714-2.656 5.714-2.656l-.006-2.753h-5.815v-.826h8.141s3.88-.44 3.88-5.794c0-5.353-3.39-5.253-3.39-5.253h-2.025v2.842s.11 3.39-3.33 3.39H9.517v3.11s-.385 4.275 2.569 4.275zm3.24-1.706a1.01 1.01 0 1 1 0-2.02 1.01 1.01 0 0 1 0 2.02z"/>
+                </svg>
+              </div>
+            </div>
+            <div class="project-card-content">
+              <h3 class="project-title">Security Log Analyzer</h3>
+              <div class="tag-row">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Log Analysis</span>
+              </div>
+              <p class="project-desc">
+                Created a Python script to analyze log files and detect suspicious activity.
+              </p>
+              <a href="https://example.com/project-log-analyzer" target="_blank" rel="noopener noreferrer" class="project-link">
+                <span>View Project</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 5: SPLIT ROW (LABS & WRITE-UPS + TOOLS & SKILLS) -->
+      <div class="split-section-grid">
+        <!-- Sub-section: Security Labs & Write-ups -->
+        <section id="security-labs" class="labs-column">
+          <div class="section-header space-between">
+            <div class="section-title-wrap">
+              <span class="section-indicator">|</span>
+              <h2 class="section-title">Security Labs & Write-ups</h2>
+              <span class="section-dash">—</span>
+            </div>
+            <a href="https://example.com/all-writeups" target="_blank" rel="noopener noreferrer" class="section-link">
+              <span>View All</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+
+          <div class="writeups-list">
+            <!-- Write-up 1 -->
+            <div class="writeup-card">
+              <div class="writeup-thumb-box">
+                <div class="code-snippet-box">
+                  <span class="code-line">' OR 1=1--</span>
+                </div>
+              </div>
+              <div class="writeup-content">
+                <h3 class="writeup-title">SQL Injection Lab</h3>
+                <div class="writeup-platform">
+                  <span class="platform-icon">🌐</span> PortSwigger
+                </div>
+                <p class="writeup-desc">Learned how SQLi works and how to prevent it.</p>
+                <a href="https://example.com/writeup-sqli" target="_blank" rel="noopener noreferrer" class="writeup-link">
+                  <span>View Write-up</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Write-up 2 -->
+            <div class="writeup-card">
+              <div class="writeup-thumb-box">
+                <div class="code-snippet-box">
+                  <span class="code-line">hydra -l admin -P</span>
+                </div>
+              </div>
+              <div class="writeup-content">
+                <h3 class="writeup-title">Brute Force Attack Analysis</h3>
+                <div class="writeup-platform">
+                  <span class="platform-icon">☁️</span> TryHackMe
+                </div>
+                <p class="writeup-desc">Analyzed failed login attempts and identified suspicious activity.</p>
+                <a href="https://example.com/writeup-brute-force" target="_blank" rel="noopener noreferrer" class="writeup-link">
+                  <span>View Write-up</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Write-up 3 -->
+            <div class="writeup-card">
+              <div class="writeup-thumb-box">
+                <div class="code-snippet-box">
+                  <span class="code-line">dig axfr @ns1</span>
+                </div>
+              </div>
+              <div class="writeup-content">
+                <h3 class="writeup-title">DNS Reconnaissance</h3>
+                <div class="writeup-platform">
+                  <span class="platform-icon">☁️</span> TryHackMe
+                </div>
+                <p class="writeup-desc">Explored DNS records and subdomain enumeration techniques.</p>
+                <a href="https://example.com/writeup-dns-recon" target="_blank" rel="noopener noreferrer" class="writeup-link">
+                  <span>View Write-up</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Sub-section: Tools & Skills -->
+        <section id="skills" class="skills-column">
+          <div class="section-header">
+            <div class="section-title-wrap">
+              <span class="section-indicator">|</span>
+              <h2 class="section-title">Tools & Skills</h2>
+              <span class="section-dash">—</span>
+            </div>
+          </div>
+
+          <div class="skills-card">
+            <!-- Category 1: Networking -->
+            <div class="skill-category-row">
+              <div class="category-badge-pill">
+                <span class="category-icon">🌐</span>
+                <span class="category-name">Networking</span>
+              </div>
+              <div class="category-items">
+                TCP/IP · DNS · HTTP/HTTPS · VPN · Firewalls
+              </div>
+            </div>
+
+            <!-- Category 2: Security Tools -->
+            <div class="skill-category-row">
+              <div class="category-badge-pill">
+                <span class="category-icon">🛡️</span>
+                <span class="category-name">Security Tools</span>
+              </div>
+              <div class="category-items">
+                Nmap · Wireshark · Burp Suite · Metasploit · Nessus
+              </div>
+            </div>
+
+            <!-- Category 3: Operating Systems -->
+            <div class="skill-category-row">
+              <div class="category-badge-pill">
+                <span class="category-icon">💻</span>
+                <span class="category-name">Operating Systems</span>
+              </div>
+              <div class="category-items">
+                Linux · Windows · Kali Linux
+              </div>
+            </div>
+
+            <!-- Category 4: Programming -->
+            <div class="skill-category-row">
+              <div class="category-badge-pill">
+                <span class="category-icon">⚙️</span>
+                <span class="category-name">Programming</span>
+              </div>
+              <div class="category-items">
+                Python · Bash
+              </div>
+            </div>
+
+            <!-- Category 5: SOC & SIEM -->
+            <div class="skill-category-row">
+              <div class="category-badge-pill">
+                <span class="category-icon">📊</span>
+                <span class="category-name">SOC & SIEM</span>
+              </div>
+              <div class="category-items">
+                Microsoft Sentinel · KQL · Log Analysis · MITRE ATT&CK
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- SECTION 6: CONTACT & FOOTER -->
+      <footer id="contact" class="main-footer">
+        <div class="footer-inner">
+          <div class="footer-left">
+            <div class="brand-avatar-xs">
+              <div class="brand-circle-xs">H</div>
+            </div>
+            <div class="footer-brand-text">
+              <span class="footer-name">Harisankar T</span>
+              <span class="footer-sub">Cybersecurity Portfolio</span>
+            </div>
+          </div>
+
+          <div class="footer-center">
+            <p class="copyright-text">© 2026 Harisankar T. All rights reserved.</p>
+          </div>
+
+          <div class="footer-right">
+            <div class="footer-social-row">
+              <a href="https://github.com/example" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="GitHub">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+                </svg>
+              </a>
+              <a href="https://linkedin.com/in/example" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="LinkedIn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                </svg>
+              </a>
+              <a href="mailto:harisankar.cybersec@example.com" class="footer-social-btn" aria-label="Email">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                </svg>
+              </a>
+              <button class="back-to-top-btn" id="back-to-top" aria-label="Back to Top">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="18 15 12 9 6 15"></polyline>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <!-- Mobile Bottom Fixed Navigation Bar (Image 2 style) -->
+    <nav class="mobile-bottom-nav">
+      <a href="#home" class="mobile-nav-item active" data-section="home">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+          <polyline points="9 22 9 12 15 12 15 22"></polyline>
+        </svg>
+        <span>Home</span>
+      </a>
+      <a href="#about" class="mobile-nav-item" data-section="about">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+          <circle cx="12" cy="7" r="4"></circle>
+        </svg>
+        <span>About</span>
+      </a>
+      <a href="#projects" class="mobile-nav-item" data-section="projects">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+        </svg>
+        <span>Projects</span>
+      </a>
+      <a href="#security-labs" class="mobile-nav-item" data-section="security-labs">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+        </svg>
+        <span>Blog</span>
+      </a>
+      <a href="#contact" class="mobile-nav-item" data-section="contact">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+          <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+        </svg>
+        <span>Contact</span>
+      </a>
+    </nav>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
